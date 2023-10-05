@@ -36,3 +36,10 @@ data <- read.csv("../Data/suites_dw_Table1.txt", sep ="|",
                  skip = find_header_lines("../Data/suites_dw_Table1.txt")) %>% 
   .[-1,]
 
+data %>% 
+  ggplot(aes(x = D, y = log_lk)) + 
+  geom_point()+ 
+  geom_smooth() +
+  xlab("Distance to galaxy in Mpc (D)") + 
+  ylab("logarithm of the stellar mass (log_lk)")
+
